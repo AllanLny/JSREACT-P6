@@ -1,14 +1,16 @@
 function photographerTemplate(data) {
     const { name, portrait, city, country, tagline, price, id } = data;
 
-    const picture = `assets/photographers/${portrait}`;
+    const Profilepicture = `assets/photographers/${portrait}`;
 
     function getUserCardDOM() {
         const article = document.createElement('article');
         const anchor = document.createElement('a');
         anchor.setAttribute("href", "photographer.html?id=" + id)
+        anchor.setAttribute("aria-label", "Bouton d'ancre pour accéder à la page du photographe" + " " + name)
         const img = document.createElement('img');
-        img.setAttribute("src", picture)
+        img.setAttribute("src", Profilepicture)
+        img.setAttribute("alt", "Photo du photographe" + " " + name)
         const h2 = document.createElement('h2');
         h2.textContent = name;
         const h3 = document.createElement('h3');
@@ -25,5 +27,5 @@ function photographerTemplate(data) {
         article.appendChild(h5);
         return (article);
     }
-    return { name, picture, city, country, id, getUserCardDOM }
+    return { name, Profilepicture, city, country, id, getUserCardDOM }
 }

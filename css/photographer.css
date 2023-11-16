@@ -3,12 +3,16 @@
 }
 
 .photograph-header {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  align-items: center;
   background-color: #fafafa;
   height: 300px;
   margin: 0 100px;
 }
 
 .contact_button {
+  margin-right: auto;
   font-size: 20px;
   font-weight: bold;
   color: white;
@@ -22,15 +26,22 @@
 }
 
 .modal {
+  position: fixed;
+  top: 30px;
+  left: 25%;
+  right: 25%;
   border-radius: 5px;
   background-color: #db8876;
-  width: 50%;
+  width: 40%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
   padding: 35px;
   margin: auto;
+}
+.modal label {
+  margin-top: 5px;
 }
 
 .modal header {
@@ -47,7 +58,9 @@
   font-weight: normal;
   text-align: center;
 }
-
+#userMessage {
+  height: 200px;
+}
 form {
   display: flex;
   width: 100%;
@@ -69,8 +82,128 @@ form div {
 }
 
 form input {
+  margin-top: 5px;
+
   width: 100%;
   height: 68px;
   border: none;
   border-radius: 5px;
+}
+.logo {
+  height: 50px;
+  margin-left: 100px;
+}
+
+.photograph-header {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 70px;
+  margin-top: 100px;
+}
+
+.photograph-header .contact_button {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.photograph-header article {
+  margin-top: 40px;
+  grid-area: 1 / 1 / 2 / 2;
+  justify-self: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.photograph-header article h2 {
+  color: #d3573c;
+  font-size: 64px;
+  text-align: center;
+}
+
+.photograph-header article img {
+  position: absolute;
+  right: 200px;
+  top: 250px;
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.photograph-header article h3 {
+  color: #901c1c;
+  font-size: 13px;
+  text-align: left;
+}
+.photograph-header article h4 {
+  color: #000;
+  font-size: 10px;
+  text-align: left;
+}
+.photograph-header article h5 {
+  color: #000000;
+  position: fixed;
+  bottom: 20px;
+  right: 80px;
+  font-size: 24px;
+}
+
+.photograph-header article h2,
+h3,
+h4,
+h5 {
+  margin-top: 5px;
+  margin-bottom: 0px;
+}
+.populaire-tarif {
+  display: flex;
+  position: fixed;
+  bottom: 0px;
+  right: 40px;
+  width: 367px;
+  height: 80px;
+  border-radius: 10px 10px 0 0;
+  background-color: #db8876;
+  z-index: -1;
+}
+
+/* Media Section */
+
+.photograph-media {
+  margin-top: 80px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+.photograph-media article {
+  z-index: -2;
+  width: 300px;
+  height: auto;
+  margin-bottom: 25px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.photograph-media article img,
+video {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+
+.txt-media {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  font-size: 24px;
+  color: #901c1c;
+  align-items: center;
+  position: relative;
+}
+.txt-media h3 {
+  width: 75%;
+}
+.like-span {
+  gap: 10px;
+  font-size: 16px;
 }
