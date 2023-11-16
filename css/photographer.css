@@ -47,6 +47,7 @@
 .modal header {
   justify-content: space-between;
   width: 100%;
+  margin-bottom: 40px;
 }
 
 .modal header img {
@@ -56,7 +57,7 @@
 .modal header h2 {
   font-size: 64px;
   font-weight: normal;
-  text-align: center;
+  text-align: left;
 }
 #userMessage {
   height: 200px;
@@ -162,7 +163,7 @@ h5 {
   position: fixed;
   bottom: 0px;
   right: 40px;
-  width: 367px;
+  width: 347px;
   height: 80px;
   border-radius: 10px 10px 0 0;
   background-color: #db8876;
