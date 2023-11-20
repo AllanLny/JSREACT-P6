@@ -143,33 +143,4 @@ async function displayPhotographerMedia(photographerId) {
     }
 }
 
-function submitFormulaire() {
-    // Sélectionnez le formulaire et le bouton Envoyer
-    const contactForm = document.querySelector('form');
-    const sendButton = document.querySelector('.contact_button');
 
-    // Ajoutez un gestionnaire d'événements au clic sur le bouton Envoyer
-    sendButton.addEventListener('click', function (event) {
-        // Empêchez le comportement par défaut du formulaire (rechargement de la page)
-        event.preventDefault();
-
-        // Sélectionnez tous les champs de texte du formulaire
-        const firstName = document.getElementById('first').value;
-        const lastName = document.getElementById('last').value;
-        const email = document.getElementById('email').value;
-        const userMessage = document.getElementById('userMessage').value;
-
-        // Affichez les valeurs des champs dans la console
-        console.log('Prénom:', firstName);
-        console.log('Nom:', lastName);
-        console.log('E-mail:', email);
-        console.log('Votre message:', userMessage);
-    });
-
-    // Vous pouvez également utiliser la méthode submit du formulaire pour déclencher le même événement
-    contactForm.addEventListener('submit', function (event) {
-        event.preventDefault();
-        // Le reste du code reste le même
-    });
-
-}
