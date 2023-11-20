@@ -56,8 +56,24 @@
         </form>
       </div>
     </div>
+    <div class="lightbox" id="lightbox">
+      <img
+        class="closeLightbox"
+        src="assets/icons/close.svg"
+        alt="fermer la lightbox"
+        onclick="closeLightbox()"
+      />
+      <div class="lightbox-content">
+        <i class="fa-solid fa-angle-left"></i>
+        <img id="lightbox-image" src="" alt="Media in Lightbox" />
+        <video id="lightbox-video" controls></video>
+        <i class="fa-solid fa-angle-right"></i>
+      </div>
+      <h3 id="lightboxTitle"></h3>
+    </div>
     <script src="/scripts/pages/photographer.js"></script>
     <script src="scripts/templates/photographer.js"></script>
     <script src="/scripts/utils/contactForm.js"></script>
+    <script src="scripts/utils/lightBox.js"></script>
   </body>
 </html>

@@ -38,6 +38,7 @@ function MediaTemplate(data) {
     function getMediaDOM() {
 
         const article = document.createElement('article');
+        article.setAttribute("class", "MediaArticle")
         if (video) {
             const videoElement = document.createElement('video');
             videoElement.setAttribute('src', mediaPath);

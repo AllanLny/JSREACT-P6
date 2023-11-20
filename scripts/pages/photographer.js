@@ -69,47 +69,6 @@ async function init() {
 }
 init();
 
-function MediaTemplate(data) {
-    const { photographerId, title, image, video, likes } = data;
-
-    const mediaPath = video ? `assets/photos/${video}` : `assets/photos/${image}`;
-
-    function getMediaDOM() {
-
-        const article = document.createElement('article');
-        if (video) {
-            const videoElement = document.createElement('video');
-            videoElement.setAttribute('src', mediaPath);
-            videoElement.setAttribute('alt', title);
-            videoElement.setAttribute('controls', true);
-            article.appendChild(videoElement);
-        } else {
-            const imageElement = document.createElement('img');
-            imageElement.setAttribute('src', mediaPath);
-            imageElement.setAttribute('alt', title);
-            article.appendChild(imageElement);
-        }
-        const divTxt = document.createElement('div');
-        divTxt.classList.add("txt-media")
-        const titleElement = document.createElement('h3');
-        titleElement.textContent = title;
-
-        const likesElement = document.createElement('span');
-        likesElement.textContent = likes;
-        likesElement.classList.add(".like-span")
-        const heartIcon = document.createElement('span');
-        heartIcon.classList.add('fa-solid', 'fa-heart');
-        likesElement.appendChild(heartIcon);
-
-        divTxt.appendChild(titleElement);
-        divTxt.appendChild(likesElement);
-        article.appendChild(divTxt);
-
-        return article;
-    }
-
-    return { photographerId, title, image, video, likes, getMediaDOM };
-}
 
 async function getPhotographerMedia(photographerId) {
     try {
@@ -138,9 +97,12 @@ async function displayPhotographerMedia(photographerId) {
 
             photographMedia.appendChild(mediaDOM);
         });
+
+
     } catch (error) {
         console.error('Erreur lors de l\'affichage des médias du photographe:', error);
     }
 }
+
 
 
