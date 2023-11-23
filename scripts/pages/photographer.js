@@ -98,11 +98,27 @@ async function displayPhotographerMedia(photographerId) {
             photographMedia.appendChild(mediaDOM);
         });
 
+        // Calculer le total des likes
+        const totalLikes = calculateTotalLikes(mediaList);
 
+        // Afficher le total des likes
+        const totalLikesElement = document.createElement('h5');
+        totalLikesElement.classList.add('total-likes');
+        totalLikesElement.textContent = ` ${totalLikes}  `;
+
+        const heartIcon = document.createElement('i');
+        heartIcon.classList.add('fa-solid', 'fa-heart', 'totalLikeHeart');
+        const populaireTarif = document.querySelector('.populaire-tarif');
+        populaireTarif.appendChild(totalLikesElement);
+        populaireTarif.appendChild(heartIcon);
     } catch (error) {
         console.error('Erreur lors de l\'affichage des médias du photographe:', error);
     }
 }
 
+// Fonction pour calculer le total des likes des médias
+function calculateTotalLikes(mediaList) {
+    return mediaList.reduce((sum, media) => sum + media.likes, 0);
+}
 
 

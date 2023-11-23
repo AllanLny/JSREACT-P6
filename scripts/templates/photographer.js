@@ -26,12 +26,14 @@ function photographerTemplate(data) {
         article.appendChild(h4);
         article.appendChild(h5);
         return (article);
+
+
     }
     return { name, Profilepicture, city, country, id, getUserCardDOM }
 }
 
 function MediaTemplate(data) {
-    const { photographerId, title, image, video, likes } = data;
+    const { photographerId, title, image, video, likes, date } = data;
 
     const mediaPath = video ? `assets/photos/${video}` : `assets/photos/${image}`;
 
@@ -41,12 +43,14 @@ function MediaTemplate(data) {
         article.setAttribute("class", "MediaArticle")
         if (video) {
             const videoElement = document.createElement('video');
+            videoElement.setAttribute("class", "MediaImgOrVideo")
             videoElement.setAttribute('src', mediaPath);
             videoElement.setAttribute('alt', title);
             videoElement.setAttribute('controls', true);
             article.appendChild(videoElement);
         } else {
             const imageElement = document.createElement('img');
+            imageElement.setAttribute("class", "MediaImgOrVideo")
             imageElement.setAttribute('src', mediaPath);
             imageElement.setAttribute('alt', title);
             article.appendChild(imageElement);
@@ -55,20 +59,44 @@ function MediaTemplate(data) {
         divTxt.classList.add("txt-media")
         const titleElement = document.createElement('h3');
         titleElement.textContent = title;
-
         const likesElement = document.createElement('span');
         likesElement.textContent = likes;
         likesElement.classList.add(".like-span")
-        const heartIcon = document.createElement('span');
+        const heartBtn = document.createElement('btn');
+        heartBtn.classList.add('heartBtn');
+        const heartIcon = document.createElement('i');
         heartIcon.classList.add('fa-solid', 'fa-heart');
-        likesElement.appendChild(heartIcon);
-
+        heartBtn.appendChild(heartIcon);
         divTxt.appendChild(titleElement);
         divTxt.appendChild(likesElement);
+        divTxt.appendChild(heartBtn);
         article.appendChild(divTxt);
+
+
+        heartBtn.addEventListener('click', liked);
+
+
+        function liked() {
+            const populaireTarif = document.querySelector(".populaire-tarif");
+            const AllLike = populaireTarif.querySelector(".total-likes");
+
+            const Liked = heartBtn.classList.contains("Liked");
+
+            if (!Liked) {
+                // Ajouter la classe Liked et + 1
+                heartBtn.classList.add("Liked");
+                likesElement.textContent = Number(likesElement.textContent) + 1;
+                AllLike.textContent = Number(AllLike.textContent) + 1;
+            } else {
+                // Supprimer la classe Liked et - 1
+                heartBtn.classList.remove("Liked");
+                likesElement.textContent = Number(likesElement.textContent) - 1;
+                AllLike.textContent = Number(AllLike.textContent) - 1;
+            }
+        }
 
         return article;
     }
 
-    return { photographerId, title, image, video, likes, getMediaDOM };
+    return { photographerId, title, image, video, likes, date, getMediaDOM };
 }

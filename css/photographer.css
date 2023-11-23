@@ -55,8 +55,8 @@
 }
 
 .modal header h2 {
-  font-size: 64px;
-  font-weight: normal;
+  font-size: 60px;
+  font-weight: 500;
   text-align: left;
 }
 #userMessage {
@@ -136,6 +136,7 @@ form input {
 .photograph-header article h3 {
   color: #901c1c;
   font-size: 13px;
+
   text-align: left;
 }
 .photograph-header article h4 {
@@ -146,8 +147,17 @@ form input {
 .photograph-header article h5 {
   color: #000000;
   position: fixed;
-  bottom: 20px;
+  bottom: 21px;
   right: 80px;
+  font-size: 24px;
+}
+
+.populaire-tarif h5 {
+  display: flex;
+  align-items: center;
+  margin-left: 40px;
+  gap: 5px;
+  color: #000000;
   font-size: 24px;
 }
 
@@ -171,6 +181,15 @@ h5 {
   border-radius: 10px 10px 0 0;
   background-color: #db8876;
   z-index: 10;
+}
+
+.populaire-tarif .totalLikeHeart {
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+
+  color: #000000;
+  font-size: 24px;
 }
 
 /* Media Section */

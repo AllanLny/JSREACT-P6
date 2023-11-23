@@ -6,18 +6,17 @@ document.addEventListener('DOMContentLoaded', function () {
     const lightboxImage = document.getElementById('lightbox-image');
     const lightboxVideo = document.getElementById('lightbox-video');
 
-    let currentMediaIndex = 0;
+
     let mediaList = [];
+    let currentMediaIndex = 0;
 
     photographMedia.addEventListener('click', function (event) {
-        const clickedArticle = event.target.closest('.MediaArticle');
+        const clickedMedia = event.target.closest('.MediaImgOrVideo');
 
-        if (clickedArticle) {
-            console.log('Article clicked');
-            // Mise à jour de la liste des médias et de l'index actuel
+        if (clickedMedia) {
+            const clickedArticle = clickedMedia.closest('.MediaArticle');
             mediaList = Array.from(document.querySelectorAll('.MediaArticle'));
             currentMediaIndex = mediaList.indexOf(clickedArticle);
-
             // Affichez la lightbox avec le média cliqué
             openLightbox(mediaList[currentMediaIndex]);
         }
@@ -86,3 +85,4 @@ function closeLightbox() {
     lightboxTitle.style.display = 'none';
 
 }
+
