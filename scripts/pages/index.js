@@ -15,7 +15,7 @@ async function getPhotographers() {
     } catch (error) {
         console.error('Error fetching photographers:', error);
         return {
-            photographers: []
+            photographers: [] // Return an empty array in case of an error
         };
     }
 }
