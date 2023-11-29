@@ -7,9 +7,9 @@ function photographerTemplate(data) {
         const article = document.createElement('article');
         const anchor = document.createElement('a');
         anchor.setAttribute("href", "photographer.html?id=" + id)
-        anchor.setAttribute("aria-label", "Bouton d'ancre pour accéder à la page du photographe" + " " + name)
+        anchor.setAttribute("aria-label", "Bouton d'ancre pour accéder à la page du photographe" + " " + name);
         const img = document.createElement('img');
-        img.setAttribute("src", Profilepicture)
+        img.setAttribute("src", Profilepicture);
         img.setAttribute("alt", "Photo du photographe" + " " + name)
         const h2 = document.createElement('h2');
         h2.textContent = name;
@@ -19,7 +19,7 @@ function photographerTemplate(data) {
         h4.textContent = tagline;
         const h5 = document.createElement('h5');
         h5.textContent = price + "€/jour";
-        article.appendChild(anchor)
+        article.appendChild(anchor);
         anchor.appendChild(img);
         article.appendChild(h2);
         article.appendChild(h3);
@@ -43,25 +43,25 @@ function MediaTemplate(data) {
         article.setAttribute("class", "MediaArticle")
         if (video) {
             const videoElement = document.createElement('video');
-            videoElement.setAttribute("class", "MediaImgOrVideo")
+            videoElement.setAttribute("class", "MediaImgOrVideo");
             videoElement.setAttribute('src', mediaPath);
-            videoElement.setAttribute('alt', title);
+            videoElement.setAttribute('alt', "Vidéo de " + title);
             videoElement.setAttribute('controls', true);
             article.appendChild(videoElement);
         } else {
             const imageElement = document.createElement('img');
-            imageElement.setAttribute("class", "MediaImgOrVideo")
+            imageElement.setAttribute("class", "MediaImgOrVideo");
             imageElement.setAttribute('src', mediaPath);
-            imageElement.setAttribute('alt', title);
+            imageElement.setAttribute('alt', "Photographie de " + title);
             article.appendChild(imageElement);
         }
         const divTxt = document.createElement('div');
-        divTxt.classList.add("txt-media")
+        divTxt.classList.add("txt-media");
         const titleElement = document.createElement('h3');
         titleElement.textContent = title;
         const likesElement = document.createElement('span');
         likesElement.textContent = likes;
-        likesElement.classList.add(".like-span")
+        likesElement.classList.add(".like-span");
         const heartBtn = document.createElement('btn');
         heartBtn.classList.add('heartBtn');
         const heartIcon = document.createElement('i');
