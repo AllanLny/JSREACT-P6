@@ -27,7 +27,7 @@
         </button>
       </div>
       <div class="dropdown-container">
-        <label for="filtre">Filtrer par</label>
+        <label for="sort">Filtrer par</label>
         <select name="sort" id="sort">
           <option id="popularité" value="popularité">Popularité</option>
           <option id="date" value="date">Date</option>
@@ -41,17 +41,21 @@
       <div class="modal">
         <header>
           <h2 class="modal-title">Contactez-moi</h2>
-          <img src="assets/icons/close.svg" onclick="closeModal()" />
+          <img
+            src="assets/icons/close.svg"
+            onclick="closeModal()"
+            alt="Logo Close Modal"
+          />
         </header>
         <form>
           <div>
-            <label>Prénom</label>
+            <label for="first">Prénom</label>
             <input class="text-control" type="text" id="first" name="first" />
-            <label>Nom</label>
+            <label for="last">Nom</label>
             <input class="text-control" type="text" id="last" name="last" />
-            <label>E-mail</label>
+            <label for="email">E-mail</label>
             <input class="text-control" type="email" id="email" name="email" />
-            <label>Votre message</label>
+            <label for="userMessage">Votre message</label>
             <input
               class="text-control"
               type="text"
@@ -72,10 +76,10 @@
         onclick="closeLightbox()"
       />
       <div class="lightbox-content">
-        <i class="fa-solid fa-angle-left"></i>
+        <span class="fa-solid fa-angle-left"></span>
         <img id="lightbox-image" src="" alt="Media in Lightbox" />
         <video id="lightbox-video" controls></video>
-        <i class="fa-solid fa-angle-right"></i>
+        <span class="fa-solid fa-angle-right"></span>
       </div>
       <h3 id="lightboxTitle"></h3>
     </div>
